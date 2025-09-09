@@ -1,0 +1,122 @@
+---
+title: "BIOS512_HW2_WILLIAMS"
+output: html_document
+---
+
+library(tidyverse)
+
+Question 1
+
+y<-25
+
+25->y
+
+y=25
+
+[1] 25
+
+Question 2
+
+```         
+cat("He said, \"I'm Garth Marenghi. Author. Dreamweaver. Visionary. Plus actor.\"")
+```
+
+```         
+He said, "I'm Garth Marenghi. Author. Dreamweaver. Visionary. Plus actor."
+```
+
+Question 3
+
+```         
+cat("He said, \"I'm Garth Marenghi. Author\\Dreamweaver\\Visionary. Plus Actor.\"")
+```
+
+```         
+He said, "I'm Garth Marenghi. Author\Dreamweaver\Visionary. Plus Actor."
+```
+
+Question 4
+
+1:3
+
+[1] 1 2 3
+
+c(1,2,3)
+
+[1] 1 2 3
+
+Question 5
+
++, -, sin(), c() are all functions
+
+<-is an operator
+
+Question 6
+
+while() evaluates the expression until the test is false. This stops the loop when x becomes 4 because it has reached the limits of the x\<=3 condition. This is why the final output result is x=4.
+
+for() evaluates the block for the amount of values listed in the sequence expression. The x value was updated for all three iterations of the sequence (1,2,3). The final output, x=4, occurs because that was the value assigned in the third and final iteration of the sequence.
+
+Question 7
+
+a^2 + b^2 = c^2 (Pythagorean Formula)
+
+a <- 3
+
+b <- 4
+
+c <- sqrt(a^2 + b^2)
+
+c
+
+[1] 5
+
+Question 8
+
+help(sin)
+
+Question 9
+
+Counter2 function works. Counter1 creates a binding in the inner function environment but does not undate the parent environment's value. That is why we get the output of 1 after the function has been completed. Counter2 updates the parent environment's value with the <<- operator so that we get an updated output of 2 after the function.
+
+Question 10
+
+a)  
+
+```         
+dataframe <- read_csv("cars.csv") %>% distinct();
+head(dataframe);
+```
+
+b)  
+
+```         
+avg_cars <- dataframe %>%
+
+    group_by(Make) %>%
+    summarise(across(c(Volume, Weight, CO2), \(x) mean(x, na.rm =     TRUE))) %>%
+    arrange(desc(Volume))
+
+print(avg_cars)
+```
+
+Question 11
+
+```         
+print_fibonacci <- function(n) {
+  a <- 0
+  b <- 1
+
+  cat("Fibonacci Sequence:")
+  for (i in 1:n) {
+    cat(a,"")
+    next_num <<- a + b
+    a <- b
+    b <- next_num
+  }
+}
+number_of_terms <- 7
+print_fibonacci(number_of_terms)
+
+Fibonacci Sequence:0 1 1 2 3 5 8 
+```
