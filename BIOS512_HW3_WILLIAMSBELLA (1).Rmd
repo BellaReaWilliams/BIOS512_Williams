@@ -1,0 +1,473 @@
+---
+title: "BIOS512_HW3_WILLIAMS"
+output: html_document
+---
+
+Question 1 
+
+Function 1 works because {{}} syntax tells R not to treat column as a normal variable but to look inside the brackets and substitute the actual column name from the dataframe. When this code is run, R will be told to group by "type". However, Function 2 does not work because R reads the word column literally. So R is looking through the dataframe for a variable named "column". Because of this confusion, R will not group the data by type. 
+
+Question 2
+
+git clone https://github.com/BellaReaWilliams/BIOS512_Williams.git 
+cd BIOS512_Williams
+
+Question 3
+
+ssh-keygen -t ed25519 -C "breaw@unc.edu"
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_ed25519
+cat ~/.ssh/id_ed25519.pub
+
+SSH key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIL0LqOOxhPpyW9wtvvZaqLiQkAMZs8CX0iCiMrJEdvdr breaw@unc.edu 
+
+Question 4
+
+a) mkdir HW2
+   echo "This is for homework 2." > HW2/HW2.md
+
+b) git add HW2/HW2.md
+   git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   HW2/HW2.md
+	
+c) git commit -m "Added HW2 directory with HW2.md"
+   git push origin main
+   
+d) # Homework 2
+
+   This is for homework 2.
+
+e) git diff
+
+diff --git a/HW2/HW2_editedtitle.md b/HW2/HW2_editedtitle.md
+index bac2cdc..d1e7f88 100644
+--- a/HW2/HW2_editedtitle.md
++++ b/HW2/HW2_editedtitle.md
+@@ -1,2 +1,3 @@
+ # Homework 2
+
+-This is for homework 2.
++This is for homework 2! Edited again for Part E after rename.
+
+f) git status
+
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   HW2/HW2_editedtitle.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+g) git log --oneline
+
+abcd123 (HEAD -> main, origin/main, origin/HEAD) Edited HW2_editedtitle.md for Part E
+934bdcd Updated HW2.md with new content for step G
+660426a Updated title to HW2.md
+bac2cdc Rename HW2.md to HW2_editedtitle.md
+0dc13ce Added HW2 directory with HW2.md
+708f4f2 Add files via upload
+5b8d7aa Delete BIOS512_HW2-1 (1).ipynb
+aa13983 Add files via upload
+0686b89 install.R
+01dee82 apt.txt
+b2ea135 install.R
+a2ec7e6 Update README.md
+71291c4 Update README.md
+b712891 Update README.md
+af73a07 Update README.md
+566d61d Update README.md
+c89dcad add cars.csv
+cd73b1e Add files via upload
+381683c add install.R
+581d48a add runtime.txt
+09dfe19 initial commit
+bellawilliams@Bellas-MacBook-Air-6 BIOS512_Williams % 
+
+h)
+
+git help log
+
+--since in regards to the git log filters commits to show only those that are more recent than a specified date. 
+
+This is the documentation:
+
+--since=<date1> limits to commits newer than <date1>, and using it with
+       --grep=<pattern> further limits to commits whose log message has a line
+       that matches <pattern>), unless otherwise noted.
+--since=<date>, --after=<date>
+           Show commits more recent than <date>.
+
+--since-as-filter=<date>
+           Show all commits more recent than <date>. This visits all commits
+           in the range, rather than stopping at the first commit which is
+           older than <date>.
+           
+library(tidyverse)
+if (!dir.exists("intermediate")) dir.create("intermediate", recursive = TRUE)
+if (!exists("mdpre")) mdpre <- function(x) { print(x) }
+if (!exists("ggmd"))  ggmd  <- function(p) { print(p) }
+
+Question 5
+
+install.packages("readr")
+library(readr)
+patient_names <- read_csv("patient_names.csv")
+patient_properties <- read_csv("patient_properties.csv")
+colnames(patient_names)
+colnames(patient_properties)
+patient_names$BIRTHDATE <- as.Date(patient_names$BIRTHDATE, format = "%m/%d/%y")
+patient_names$DEATHDATE <- as.Date(patient_names$DEATHDATE, format = "%m/%d/%y")
+
+print(patient_names, n = 10)
+   ID                                   BIRTHDATE  DEATHDATE  FIRST      LAST           CITY      STATE        
+   <chr>                                <date>     <date>     <chr>      <chr>          <chr>     <chr>        
+ 1 5605b66b-e92d-c16c-1b83-b8bf7040d51f 1977-03-19 NA         Nikita578  Erdman779      Quincy    Massachusetts
+ 2 6e5ae27c-8038-7988-e2c0-25a103f01bfa 2040-02-19 NA         Zane918    Hodkiewicz467  Boston    Massachusetts
+ 3 8123d076-0886-9007-e956-d5864aa121a7 2058-06-04 NA         Quinn173   Marquardt819   Quincy    Massachusetts
+ 4 770518e4-6133-648e-60c9-071eb2f0e2ce 2028-12-25 2017-09-29 Abel832    Smitham825     Boston    Massachusetts
+ 5 f96addf5-81b9-0aab-7855-d208d3d352c5 2028-12-25 2014-02-23 Edwin773   Labadie908     Boston    Massachusetts
+ 6 8e9650d1-788a-78f9-4a28-d08f7f95354a 2028-12-25 NA         Frankie174 Oberbrunner298 Boston    Massachusetts
+ 7 183df435-4190-060e-8f8e-bf63c572b266 2057-11-08 NA         Eilene124  Walsh511       Cambridge Massachusetts
+ 8 720560d4-51da-c38c-ee90-c15935278df1 1972-06-27 NA         Lowell343  Price929       Quincy    Massachusetts
+ 9 217851b0-5f47-d376-18b9-0fe4ba77207e 2054-03-06 NA         Adrian111  Gleason633     Boston    Massachusetts
+10 ff331e5c-ab16-e218-f39a-63e11de1ed75 2027-07-10 NA         Eugene421  Abernathy524   Boston    Massachusetts
+
+print(patient_properties, n = 10)
+   ID                                   property  value      
+   <chr>                                <chr>     <chr>      
+ 1 5605b66b-e92d-c16c-1b83-b8bf7040d51f MARITAL   M          
+ 2 5605b66b-e92d-c16c-1b83-b8bf7040d51f RACE      white      
+ 3 5605b66b-e92d-c16c-1b83-b8bf7040d51f ETHNICITY nonhispanic
+ 4 5605b66b-e92d-c16c-1b83-b8bf7040d51f GENDER    F          
+ 5 6e5ae27c-8038-7988-e2c0-25a103f01bfa MARITAL   M          
+ 6 6e5ae27c-8038-7988-e2c0-25a103f01bfa RACE      white      
+ 7 6e5ae27c-8038-7988-e2c0-25a103f01bfa ETHNICITY nonhispanic
+ 8 6e5ae27c-8038-7988-e2c0-25a103f01bfa GENDER    M          
+ 9 8123d076-0886-9007-e956-d5864aa121a7 MARITAL   M          
+10 8123d076-0886-9007-e956-d5864aa121a7 RACE      white  
+
+Question 6
+library(tidyr)
+library(dplyr)
+
+patient_properties_wide <- patient_properties %>%
+  pivot_wider(
+    names_from = property,
+    values_from = value
+  )
+
+print(patient_properties_wide,n=10)
+
+   ID                                   MARITAL RACE   ETHNICITY   GENDER
+   <chr>                                <chr>   <chr>  <chr>       <chr> 
+ 1 5605b66b-e92d-c16c-1b83-b8bf7040d51f M       white  nonhispanic F     
+ 2 6e5ae27c-8038-7988-e2c0-25a103f01bfa M       white  nonhispanic M     
+ 3 8123d076-0886-9007-e956-d5864aa121a7 M       white  nonhispanic M     
+ 4 770518e4-6133-648e-60c9-071eb2f0e2ce M       white  hispanic    M     
+ 5 f96addf5-81b9-0aab-7855-d208d3d352c5 M       white  hispanic    M     
+ 6 8e9650d1-788a-78f9-4a28-d08f7f95354a M       white  hispanic    M     
+ 7 183df435-4190-060e-8f8e-bf63c572b266 M       asian  nonhispanic F     
+ 8 720560d4-51da-c38c-ee90-c15935278df1 M       white  nonhispanic M     
+ 9 217851b0-5f47-d376-18b9-0fe4ba77207e S       black  hispanic    M     
+10 ff331e5c-ab16-e218-f39a-63e11de1ed75 M       native hispanic    M  
+
+Question 7
+
+ patient_full <- patient_names %>%
+     left_join(patient_properties_wide, by = "ID") %>%
+     select(ID, BIRTHDATE, DEATHDATE, FIRST, LAST, CITY, STATE, MARITAL, RACE, ETHNICITY, GENDER)
+
+print(paste("left join rows:", nrow(patient_full)))
+"left join rows: 974"
+
+ library(lubridate)
+ 
+patient_names$BIRTHDATE <- ymd(patient_names$BIRTHDATE, truncated = 2)
+patient_names$DEATHDATE <- ymd(patient_names$DEATHDATE, truncated = 2)
+
+print(patient_full,n=10)
+ ID                              BIRTHDATE  DEATHDATE  FIRST LAST  CITY  STATE MARITAL RACE  ETHNICITY GENDER
+   <chr>                           <date>     <date>     <chr> <chr> <chr> <chr> <chr>   <chr> <chr>     <chr> 
+ 1 5605b66b-e92d-c16c-1b83-b8bf70… 1977-03-19 NA         Niki… Erdm… Quin… Mass… M       white nonhispa… F     
+ 2 6e5ae27c-8038-7988-e2c0-25a103… 2040-02-19 NA         Zane… Hodk… Bost… Mass… M       white nonhispa… M     
+ 3 8123d076-0886-9007-e956-d5864a… 2058-06-04 NA         Quin… Marq… Quin… Mass… M       white nonhispa… M     
+ 4 770518e4-6133-648e-60c9-071eb2… 2028-12-25 2017-09-29 Abel… Smit… Bost… Mass… M       white hispanic  M     
+ 5 f96addf5-81b9-0aab-7855-d208d3… 2028-12-25 2014-02-23 Edwi… Laba… Bost… Mass… M       white hispanic  M     
+ 6 8e9650d1-788a-78f9-4a28-d08f7f… 2028-12-25 NA         Fran… Ober… Bost… Mass… M       white hispanic  M     
+ 7 183df435-4190-060e-8f8e-bf63c5… 2057-11-08 NA         Eile… Wals… Camb… Mass… M       asian nonhispa… F     
+ 8 720560d4-51da-c38c-ee90-c15935… 1972-06-27 NA         Lowe… Pric… Quin… Mass… M       white nonhispa… M     
+ 9 217851b0-5f47-d376-18b9-0fe4ba… 2054-03-06 NA         Adri… Glea… Bost… Mass… S       black hispanic  M     
+10 ff331e5c-ab16-e218-f39a-63e11d… 2027-07-10 NA         Euge… Aber… Bost… Mass… M       nati… hispanic  M   
+
+Question 8
+
+ library(stringr)
+ simplify_strings <- function(s){
+     s <- str_to_lower(s)                # lowercase all letters
+     s <- str_trim(s)                    # remove leading/trailing whitespace
+     s <- str_replace_all(s, "[^a-z]+", "")  # remove numbers, punctuation, underscores
+     s
+ }
+ patient_full <- patient_full %>%
+     mutate(
+         FIRST = simplify_strings(FIRST),
+         LAST = simplify_strings(LAST)
+     )
+print(patient_full, n=10)
+
+   ID                                   BIRTHDATE  DEATHDATE  FIRST   LAST        CITY      STATE         MARITAL RACE   ETHNICITY   GENDER
+   <chr>                                <date>     <date>     <chr>   <chr>       <chr>     <chr>         <chr>   <chr>  <chr>       <chr> 
+ 1 5605b66b-e92d-c16c-1b83-b8bf7040d51f 1977-03-19 NA         nikita  erdman      Quincy    Massachusetts M       white  nonhispanic F     
+ 2 6e5ae27c-8038-7988-e2c0-25a103f01bfa 2040-02-19 NA         zane    hodkiewicz  Boston    Massachusetts M       white  nonhispanic M     
+ 3 8123d076-0886-9007-e956-d5864aa121a7 2058-06-04 NA         quinn   marquardt   Quincy    Massachusetts M       white  nonhispanic M     
+ 4 770518e4-6133-648e-60c9-071eb2f0e2ce 2028-12-25 2017-09-29 abel    smitham     Boston    Massachusetts M       white  hispanic    M     
+ 5 f96addf5-81b9-0aab-7855-d208d3d352c5 2028-12-25 2014-02-23 edwin   labadie     Boston    Massachusetts M       white  hispanic    M     
+ 6 8e9650d1-788a-78f9-4a28-d08f7f95354a 2028-12-25 NA         frankie oberbrunner Boston    Massachusetts M       white  hispanic    M     
+ 7 183df435-4190-060e-8f8e-bf63c572b266 2057-11-08 NA         eilene  walsh       Cambridge Massachusetts M       asian  nonhispanic F     
+ 8 720560d4-51da-c38c-ee90-c15935278df1 1972-06-27 NA         lowell  price       Quincy    Massachusetts M       white  nonhispanic M     
+ 9 217851b0-5f47-d376-18b9-0fe4ba77207e 2054-03-06 NA         adrian  gleason     Boston    Massachusetts S       black  hispanic    M     
+10 ff331e5c-ab16-e218-f39a-63e11de1ed75 2027-07-10 NA         eugene  abernathy   Boston    Massachusetts M       native hispanic    M   
+
+Question 9
+
+categorical_cols <- c("MARITAL", "RACE", "ETHNICITY", "GENDER")
+ 
+ for (col in categorical_cols) {
+     counts <- patient_full %>%
+         count(.data[[col]]) %>%
+         arrange(desc(n))
+     
+     mdpre(paste("Counts for", col))
+     mdpre(counts)
+ }
+
+[1] "Counts for MARITAL"
+
+  MARITAL     n
+  <chr>   <int>
+1 M         782
+2 S         189
+3 Fine        1
+4 male        1
+5 NA          1
+
+[1] "Counts for RACE"
+
+  RACE         n
+  <chr>    <int>
+1 white      680
+2 black      163
+3 asian       90
+4 other       16
+5 hawaiian    13
+6 native      11
+7 asiann       1
+
+[1] "Counts for ETHNICITY"
+
+  ETHNICITY       n
+  <chr>       <int>
+1 nonhispanic   781
+2 hispanic      190
+3 nonhispani      2
+4 hispani         1
+
+[1] "Counts for GENDER"
+
+  GENDER     n
+  <chr>  <int>
+1 M        493
+2 F        478
+3 Female     1
+4 Male       1
+5 female     1
+
+Question 10
+
+simplify_strings <- function(s){
+  s %>%
+    str_to_lower() %>%
+    str_trim() %>%
+    str_replace_all("[^a-z1-9]+","_") %>%
+    str_replace_all("^_+","") %>%
+    str_replace_all("_+$","")
+}
+
+patient_full_clean <- patient_full %>%
+  mutate(across(c(MARITAL, RACE, ETHNICITY, GENDER), simplify_strings))
+  
+ patient_full_clean <- patient_full_clean %>%
+     mutate(
+         GENDER = case_when(
+             GENDER %in% c("f", "female") ~ "f",
+             GENDER %in% c("m", "male") ~ "m",
+             TRUE ~ GENDER
+         ),
+         ETHNICITY = case_when(
+             ETHNICITY %in% c("nonhispani", "nonhispanic") ~ "nonhispanic",
+             ETHNICITY %in% c("hispani", "hispanic") ~ "hispanic",
+             TRUE ~ ETHNICITY
+         ),
+         RACE = case_when(
+             RACE %in% c("asian", "asiann") ~ "asian",
+             TRUE ~ RACE
+         ),
+         MARITAL = case_when(
+             MARITAL %in% c("fine", "male") | is.na(MARITAL) ~ NA_character_,
+             TRUE ~ MARITAL
+         )
+     )
+ categorical_vars <- c("MARITAL", "RACE", "ETHNICITY", "GENDER")
+ for (col in categorical_vars) {
+     cat(sprintf("Counts for %s\n", col))
+     patient_full_clean %>%
+         count(.data[[col]]) %>%
+         arrange(desc(n)) %>%
+         print()
+     cat("\n")
+ }
+Counts for MARITAL
+  MARITAL     n
+  <chr>   <int>
+1 m         782
+2 s         189
+3 NA          3
+
+Counts for RACE
+  RACE         n
+  <chr>    <int>
+1 white      680
+2 black      163
+3 asian       91
+4 other       16
+5 hawaiian    13
+6 native      11
+
+Counts for ETHNICITY
+  ETHNICITY       n
+  <chr>       <int>
+1 nonhispanic   783
+2 hispanic      191
+
+Counts for GENDER
+  GENDER     n
+  <chr>  <int>
+1 m        494
+2 f        480
+
+ cat("Birthdate range:\n")
+Birthdate range:
+ print(range(patient_full$BIRTHDATE, na.rm = TRUE))
+[1] "1969-01-11" "2068-10-08"
+ 
+ cat("Deathdate range:\n")
+Deathdate range:
+ print(range(patient_full$DEATHDATE, na.rm = TRUE))
+[1] "2011-02-03" "2022-01-27"
+
+Question 11
+
+library(lubridate)
+library(dplyr)
+library(ggplot2)
+
+patient_full <- patient_full %>%
+  mutate(
+    BIRTHDATE = as.Date(BIRTHDATE),
+    DEATHDATE = as.Date(DEATHDATE),
+    BIRTHDATE = if_else(BIRTHDATE > as.Date("2020-01-01"),
+                        BIRTHDATE - years(100),
+                        BIRTHDATE)
+  )
+
+patient_full <- patient_full %>%
+  mutate(
+    AGE = case_when(
+      !is.na(DEATHDATE) ~ as.numeric(interval(BIRTHDATE, DEATHDATE) / years(1)),
+      is.na(DEATHDATE)  ~ as.numeric(interval(BIRTHDATE, Sys.Date()) / years(1)),
+      TRUE              ~ NA_real_
+    ),
+    GENDER = tolower(GENDER),
+    GENDER = case_when(
+      GENDER %in% c("f", "female") ~ "f",
+      GENDER %in% c("m", "male")   ~ "m",
+      TRUE                         ~ NA_character_
+    )
+  ) %>%
+  filter(!is.na(AGE), AGE >= 0, AGE <= 120) 
+
+patient_full$GENDER <- factor(patient_full$GENDER, levels = c("f", "m"))
+
+binwidth <- 5
+patient_full <- patient_full %>%
+  mutate(age_bin = cut_width(AGE, width = binwidth, boundary = 0, closed = "left"))
+
+ggplot(patient_full, aes(x = age_bin, fill = GENDER)) +
+  geom_bar(position = position_dodge(width = 0.9), color = "white", width = 0.9) +
+  scale_fill_manual(
+    name = "Gender",
+    values = c("f" = "#F8766D", "m" = "#00BFC4"),
+    labels = c("f" = "Female", "m" = "Male")
+  ) +
+  labs(
+    title = "Age Distribution of All Patients by Gender",
+    x = "Age (years, binned 5-year)",
+    y = "Count"
+  ) +
+  theme_classic() +
+  theme(
+    legend.position = "top",
+    axis.text.x = element_text(angle = 45, hjust = 1)
+  )
+
+![caption](https://hub.gesis.mybinder.org/user/bellareawilliam-nment1_williams-q7v1ymxt/rstudio/files/Histogram1.png)
+Corrected date ranges from Question 10: 
+ cat("Birthdate range:\n")
+Birthdate range:
+ print(range(patient_full$BIRTHDATE, na.rm = TRUE))
+[1] "1922-03-24" "1991-11-27"
+ 
+ cat("\nDeathdate range:\n")
+
+Deathdate range:
+ print(range(patient_full$DEATHDATE, na.rm = TRUE))
+[1] "2011-02-03" "2022-01-27"
+ 
+ cat("\nAge range (all patients):\n")
+
+Age range (all patients):
+ print(range(patient_full$AGE, na.rm = TRUE))
+[1]  26.22466 103.46849
+
+Question 12
+
+library(dplyr)
+library(ggplot2)
+
+plot_data <- patient_full %>%
+  filter(MARITAL %in% c("M", "S")) %>%
+  mutate(MARITAL = recode(MARITAL,
+                          "M" = "Married",
+                          "S" = "Single"))
+
+ggplot(plot_data, aes(x = MARITAL, y = AGE, color = MARITAL)) +
+  geom_jitter(width = 0.2, alpha = 0.6, size = 2) +
+  scale_color_manual(values = c("Married" = "#00BFC4", "Single" = "#F8766D")) +
+  labs(
+    title = "Patient Age by Marital Status",
+    x = "Marital Status",
+    y = "Age (years)"
+  ) +
+  theme_classic() +
+  theme(legend.position = "none")
+
+![caption](https://hub.gesis.mybinder.org/user/bellareawilliam-nment1_williams-q7v1ymxt/rstudio/files/Scatterplot1.png) 
