@@ -1,0 +1,36 @@
+patient_id,name,age,gender,race,ethnicity,condition,treatment,department,hospital,admission_date,release_date,patient_address,patient_city,patient_state,patient_zipcode
+P001,Mary Hicks,51,Male,Hispanic,Non-Hispanic,Cancer,Chemotherapy,Oncology,H1,2024-09-30,2025-04-24,NA,NA,NA,NA
+P002,Matthew Christensen,73,Male,Hispanic,Non-Hispanic,Heart Disease,Bypass Surgery,Cardiology,H5,2025-06-09,2025-09-04,762 Hatfield Lights Apt. 887,North Thomasbury,WI,96149
+P003,Lisa Graham,49,NA,White,Non-Hispanic,Asthma,Inhaler Therapy,Pediatrics,H5,2025-09-08,2025-09-08,25592 Foley Forge Suite 365,New Tiffany,IN,33286
+P004,Greg Brown,6,Other,White,Non-Hispanic,Heart Disease,Bypass Surgery,Cardiology,H3,2025-09-02,2025-09-06,1189 Swanson Pike Apt. 921,Underwoodburgh,NV,9762
+P005,Joshua Baker,64,Other,White,Non-Hispanic,Heart Disease,Bypass Surgery,Cardiology,H1,2025-02-23,2025-06-24,81598 Chambers Mall Suite 136,Timothyfurt,HI,99546
+P006,Wendy Richardson,38,Other,Hispanic,Non-Hispanic,Asthma,Inhaler Therapy,Pediatrics,H3,2025-01-06,2025-05-14,1890 Norman Fields,Davidhaven,MS,87095
+P007,April Sanchez,36,Female,Black,Non-Hispanic,Asthma,Inhaler Therapy,Pediatrics,H5,2024-12-20,2025-03-18,13513 Kerry Square,Wrightview,NV,4548
+P008,Melinda Moody,22,Other,Hispanic,Hispanic,Stroke,Rehabilitation Therapy,Neurology,H3,2025-07-29,2025-08-02,10224 Calderon Mission Suite 031,Brianborough,WA,29439
+P009,Dylan Lopez DVM,20,Male,Asian,Non-Hispanic,Asthma,Inhaler Therapy,Pediatrics,H1,2024-12-09,2025-06-05,82269 Hunter Fork,North Robertport,DE,35771
+P010,Maria Bruce,85,Other,Asian,Hispanic,Fracture,Surgery,Orthopedics,H5,2024-12-27,2025-04-18,787 Samantha Junctions,Randymouth,NH,3346
+P011,Kristine Lewis,61,Female,Other,Hispanic,Asthma,Inhaler Therapy,Pediatrics,H4,2025-06-07,2025-06-09,158 Gregory Skyway,Kristenside,NC,28628
+P012,Jessica Ibarra,23,Other,Hispanic,Hispanic,Fracture,Surgery,Orthopedics,H2,2024-11-04,2025-03-25,549 Miller Points,Lake Danielhaven,WI,17863
+P013,Matthew Rogers,54,Female,Asian,Hispanic,Fracture,Surgery,Orthopedics,H4,2025-05-01,2025-08-25,54336 Thomas Square Suite 198,South Whitneyside,WI,73718
+P014,Joseph Thompson,22,Other,Black,Hispanic,Fracture,Surgery,Orthopedics,H3,2025-03-26,2025-09-02,67993 Anna Street Apt. 090,Paulshire,RI,97638
+P015,Holly Contreras,29,Male,White,Hispanic,Heart Disease,Bypass Surgery,Cardiology,H1,2025-02-01,2025-05-01,5531 Rivas Rest,Reynoldsport,OH,70082
+P016,Heather Chandler,74,Female,NA,NA,Asthma,Inhaler Therapy,Pediatrics,H1,2025-08-14,2025-09-05,81250 John Lodge Suite 410,Jenningston,OH,3168
+P017,John Brown,81,Female,Black,Hispanic,Asthma,Inhaler Therapy,Pediatrics,H1,2024-09-13,2025-03-22,727 Smith Gateway Suite 566,Lake Heatherhaven,HI,64407
+P018,Nathan Chase,7,Other,Black,Hispanic,Heart Disease,Bypass Surgery,Cardiology,H2,2025-01-06,2025-06-20,44877 Soto Radial Apt. 787,Christianberg,DE,99048
+P019,Casey Norman,28,Male,Asian,Hispanic,Asthma,Inhaler Therapy,Pediatrics,H1,2025-01-31,2025-05-02,NA,NA,NA,NA
+P020,Nicholas Smith MD,67,Male,Black,Non-Hispanic,Cancer,Chemotherapy,Oncology,H1,2024-10-27,2024-12-06,9960 Scott Mall,Craigville,DC,57014
+P021,Mary Cobb,87,Female,Black,Non-Hispanic,Stroke,Rehabilitation Therapy,Neurology,H5,2024-11-30,2025-01-26,15716 Debbie Estate Apt. 751,Darrenmouth,OH,68474
+P022,Thomas Logan,1,Male,Asian,Non-Hispanic,Cancer,Chemotherapy,Oncology,H4,2025-02-26,2025-05-10,58343 Devin Causeway Apt. 116,Kyleshire,AK,36697
+P023,Anthony Anderson,70,Male,Hispanic,Non-Hispanic,Fracture,Surgery,Orthopedics,H4,2025-03-25,2025-05-07,542 Thomas Harbor Suite 728,Holderberg,MS,68736
+P024,Matthew Jones,75,Male,White,Hispanic,Asthma,Inhaler Therapy,Pediatrics,H3,2025-09-07,2025-09-08,7878 Brian Shores Apt. 405,Lewisstad,FL,78536
+P025,Kathryn Harrison,51,Male,Other,Hispanic,Fracture,Surgery,Orthopedics,H5,2025-02-13,2025-05-10,4537 Victor Fall Apt. 014,Gonzalezton,MN,91796
+P026,Jose Young,76,Other,Hispanic,Hispanic,Cancer,Chemotherapy,Oncology,H5,2025-04-21,2025-07-20,278 Jessica Glen Suite 070,West Tonya,ME,61982
+P027,Samuel Herrera,10,Female,Asian,Non-Hispanic,Cancer,Chemotherapy,Oncology,H2,2024-10-13,2025-02-05,08804 Kevin Stravenue Suite 384,Holdertown,NH,91459
+P028,Wanda Simmons,8,Female,Asian,Hispanic,Fracture,Surgery,Orthopedics,H5,2025-07-11,2025-08-08,5294 Theresa Crossroad Suite 416,Julieville,ND,70891
+P029,Whitney Fuller,2,Male,White,Non-Hispanic,Cancer,Chemotherapy,Oncology,H3,2025-05-16,2025-07-31,26553 Robert Courts,North Jeffrey,AZ,97363
+P030,John Rodriguez,NA,Male,Hispanic,Hispanic,Cancer,Chemotherapy,Oncology,H4,2025-02-11,2025-02-16,624 Blankenship Mews,Myersfurt,VT,80463
+P031,John Ibarra,75,Female,White,Non-Hispanic,Cancer,Chemotherapy,Oncology,H1,2024-12-03,2025-05-23,326 Andrade Mountains,Bryantton,AK,65060
+P032,Erica Foley,47,Male,Hispanic,Non-Hispanic,Cancer,Chemotherapy,Oncology,H1,2025-04-12,2025-06-13,1770 Davis Village Suite 855,East Rebecca,MO,74177
+P033,Spencer Wells,66,Male,White,Hispanic,Stroke,Rehabilitation Therapy,Neurology,H5,2024-12-21,2025-07-09,1050 Hernandez Wells,South Brian,CA,7129
+P034,Holly Mclaughlin,56,Other,Asian,Non-Hispanic,Heart Disease,Bypass Surgery,Cardiology,H3,2025-04-18,2025-07-01,06756 Mcclure Forks Apt. 108,Williamshaven,CO,65766
+P035,Ashley Johnson,22,Other,White,Non-Hispanic,Heart Disease,Bypass Surgery,Cardiology,H1,2025-02-20,2025-05-10,79347 Freeman Mount,Port Austin,KY,73451

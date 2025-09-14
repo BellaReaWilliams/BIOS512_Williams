@@ -1,0 +1,6 @@
+condition_id,condition,treatment,department
+HD,Heart Disease,Bypass Surgery,Cardiology
+S,Stroke,Rehabilitation Therapy,Neurology
+C,Cancer,Chemotherapy,Oncology
+F,Fracture,Surgery,Orthopedics
+A,Asthma,Inhaler Therapy,Pediatrics
