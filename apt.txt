@@ -2,3 +2,7 @@ libxml2-dev
 libcurl4-openssl-dev
 libssl-dev
 libicu-dev
+pandoc
+texlive-xetex
+texlive-fonts-recommended
+texlive-plain-generic
